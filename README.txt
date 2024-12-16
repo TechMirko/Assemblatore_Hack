@@ -1,27 +1,40 @@
-Questo zip contiene la struttura del progetto, quasi completa. 
+# Assemblatore Nand2Tetris in C
 
-Non va inteso come un software "da completare": piuttosto è da 
-prendere come traccia nel caso si abbia difficoltà a cominciare
-il progetto. 
+Questo progetto è un'implementazione di un assemblatore per il corso [Nand2Tetris](https://www.nand2tetris.org/) scritto in linguaggio C. L'assemblatore traduce i file di codice assembly di Hack in file binari che possono essere eseguiti sull'Hack Computer, l'architettura del computer sviluppata nel corso Nand2Tetris.
 
-Il file symbolTable.c contiene invece una possibile implementazione 
-completa della symbol table studiata.
+## Struttura del Progetto
 
-Fare attenzione alle specifiche di consegna, e testare il progetto 
-almeno con i file suggeriti (vedi su Virtuale). 
+- **assembler.c**: Contiene il codice principale dell'assemblatore.
+- **parser.c**: Implementa le funzioni per il parsing delle istruzioni assembly.
+- **symbolTable.c**: Gestisce la tabella dei simboli per l'assemblatore.
+- **assembler.h**: Header file per l'assemblatore.
+- **parser.h**: Header file per il parser.
+- **symbolTable.h**: Header file per la tabella dei simboli.
+- **README.md**: Questo file di documentazione.
 
-Testare con file .asm con commenti, spazi, etc, usando il 
-tool Assembler per (1) assemblare e (2) comparare con il vostro output.
+## Requisiti
 
-Il programma non deve per forza gestire il caso di file .asm 
-errati, cioè che non rispettino la sintassi del linguaggio. 
-Programmi ISA che non hanno senso ma sono sintatticamente 
-corretti dovrebbero invece essere tradotti senza errori. 
-Esempio: se usiamo una label (etichetta) non esistente, 
-questa sarà interpretata come simbolo di variabile. 
-Fare prove con il tool Assembler per verificare. 
+- Un compilatore C (ad esempio, GCC)
+- Un editor di testo o un IDE per modificare il codice sorgente
 
-Non assumere che variabili siano sempre minuscole ed 
-etichette sempre maiuscole. 
+## Installazione
 
-Per domande sulla consegna o correzione, scrivete al tutor con me in CC.
+1. Clonare il repository GitHub:
+
+    ```sh
+    git clone https://github.com/TechMirko/Assemblatore_Hack.git
+    cd Assemblatore_Hack
+    ```
+
+2. Compilare il codice sorgente:
+
+    ```sh
+    gcc -o assembler assembler.c parser.c symbolTable.c
+    ```
+
+## Uso
+
+Eseguire l'assemblatore fornendo come argomento il file di codice assembly `.asm` che si desidera assemblare. Ad esempio:
+
+```sh
+./assembler Prog.asm
