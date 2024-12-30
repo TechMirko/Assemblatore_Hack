@@ -32,4 +32,5 @@ run: $(EXECUTABLE)
 
 # Pulizia dei file generati
 clean:
-	del /f $(EXECUTABLE) *.o *.hack
+	rm -f $(EXECUTABLE) *.o *.hack
+
